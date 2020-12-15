@@ -8,11 +8,6 @@ ext {
     ]
 
     mx_library_version = [
-            router_annotation         : '2.6.0',
-            router_service            : '2.6.0@aar',
-            dokodemodoor_annotation_v7: "1.2.1",
-            dokodemodoor_v7           : "1.6.1@aar",
-			skin           			  : "2.0.5@aar",
 			preload_annotation		  : "1.1.0",
 			preload_compiler		  : "1.1.0",
 			preload_core			  : "1.1.0@aar",

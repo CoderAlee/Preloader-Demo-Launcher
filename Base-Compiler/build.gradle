@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: "com.github.johnrengelman.shadow"
+
+dependencies {
+    api rootProject.ext.Official_Library["appcompat"]
+    api rootProject.ext.Tripartite_Library["auto_service"]
+    api rootProject.ext.Tripartite_Library["javapoet"]
+    api rootProject.ext.Tripartite_Library["common"]
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+shadowJar {
+    baseName = 'Bas-Compiler'
+    archiveVersion = '1.0.0'
+}

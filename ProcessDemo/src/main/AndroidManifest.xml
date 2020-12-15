@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.alee.component.demo.process">
+
+    <application>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".main.MainProcessActivity" />
+        <activity
+            android:name=".a.AProcessActivity"
+            android:process=":A" />
+        <activity
+            android:name=".b.BProcessActivity"
+            android:process=":B" />
+        <activity android:name=".all.AllProcessActivity" />
+    </application>
+
+</manifest>

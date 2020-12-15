@@ -1,2 +1,13 @@
+include ':ComplexDependenceDemo'
+include ':CapabilityStatement'
+include ':ComponentBDemo'
+include ':ComponentADemo'
+include ':ProcessDemo'
 include ':app'
+if (CITING_THE_SOURCE_CODE.toBoolean()){
+    include ':Base-Compiler'
+    include ':Preloader-Annotation'
+    include ':Preloader-Compiler'
+    include ':Preloader-Core'
+}
 rootProject.name = "Preloader-Demo-Launcher"
