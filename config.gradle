@@ -1,0 +1,32 @@
+apply from: "/builder/dependent-version.gradle"
+ext {
+    android = [
+            compileSdkVersion = android_version['compile'],
+            applicationId = "org.alee.component.demo.preloader",
+            minSdkVersion = android_version['min'],
+            targetSdkVersion = android_version['compile'],
+            versionCode = LOCAL_VERSION_CODE as Integer,
+            versionName = LOCAL_VERSION_NAME,
+            buildToolsVersion = android_version['build_tool'],
+    ]
+
+    Official_Library = [
+            appcompat: "androidx.appcompat:appcompat:${official_library_version['appcompatX']}",
+
+    ]
+
+    MX_Library = [
+            preload_annotation: "org.alee.component.x:Preload-Annotation:${mx_library_version['preload_annotation']}",
+            preload_compiler  : "org.alee.component.x:Preload-Compiler:${mx_library_version['preload_compiler']}",
+            preload_core      : "org.alee.component.x:Preload-Core:${mx_library_version['preload_core']}",
+            reflex            : "org.alee:Reflex:1.1.0"
+    ]
+
+    Tripartite_Library = [
+            aspectJ     : "org.aspectj:aspectjrt:${tripartite_library_version['aspectJ']}",
+            auto_service: "com.google.auto.service:auto-service:${tripartite_library_version['auto_service']}",
+            javapoet    : "com.squareup:javapoet:${tripartite_library_version['javapoet']}",
+            common      : "com.google.auto:auto-common:${tripartite_library_version['common']}",
+    ]
+
+}

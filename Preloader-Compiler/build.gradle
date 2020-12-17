@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+apply plugin: "com.github.johnrengelman.shadow"
+
+dependencies {
+    if (CITING_THE_SOURCE_CODE.toBoolean()) {
+        implementation project(path: ':Base-Compiler')
+        implementation project(path: ':Preloader-Annotation')
+    } else {
+        implementation files('libs\\Bas-Compiler-1.0.0-all.jar')
+        implementation rootProject.ext.MX_Library["preload_annotation"]
+    }
+}
+
+shadowJar {
+    baseName = 'Preload-Compiler'
+    archiveVersion = '1.1.1'
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}

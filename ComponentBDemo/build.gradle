@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [COMPONENT_NAME: project.getName(),AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        ignoreWarnings true
+    }
+    resourcePrefix "component_b_"
+
+}
+
+dependencies {
+    implementation rootProject.ext.Official_Library["appcompat"]
+    implementation project(path: ':CapabilityStatement')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+    if (CITING_THE_SOURCE_CODE.toBoolean()){
+        annotationProcessor project(path: ':Preloader-Compiler')
+        implementation project(path: ':Preloader-Core')
+    }else {
+
+    }
+}

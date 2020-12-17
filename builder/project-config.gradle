@@ -9,6 +9,7 @@ ext {
     warehouse_address = {
 		google()
         jcenter()
+		maven { url mx_maven }
 		maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://jitpack.io' }
 		maven {	url 'https://plugins.gradle.org/m2/'}
